@@ -69,7 +69,7 @@ func (s *Sqlite) GetStudentById(id int64) (types.Student, error) {
 
 	var student types.Student
 
-	err = stmt.QueryRow(id).Scan(&student.Id, &student.Age, &student.Email, &student.Name)
+	err = stmt.QueryRow(id).Scan(&student.Id, &student.Name, &student.Email, &student.Age)
 
 	if err != nil {
 		if err == sql.ErrNoRows {
